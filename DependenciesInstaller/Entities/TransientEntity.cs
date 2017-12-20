@@ -2,7 +2,7 @@
 
 namespace DependenciesInstaller.Entities
 {
-    public class TransientEntity : RegisteredEntity
+    internal class TransientEntity : RegisteredEntity
     {
         public override void SetLifeTime(IServiceCollection service)
         {

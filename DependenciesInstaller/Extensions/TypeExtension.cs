@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace DependenciesInstaller.Extensions
 {
-    public static class TypeExtension
+    internal static class TypeExtension
     {
         public static Attribute GetEntityLifeTimeAttribute(this Type type)
         {

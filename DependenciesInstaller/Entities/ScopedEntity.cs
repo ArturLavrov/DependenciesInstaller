@@ -2,7 +2,7 @@
 
 namespace DependenciesInstaller.Entities
 {
-    public class ScopedEntity : RegisteredEntity
+    internal class ScopedEntity : RegisteredEntity
     {
         public override void SetLifeTime(IServiceCollection service)
         {

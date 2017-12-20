@@ -7,6 +7,7 @@ namespace DependenciesInstaller.Tests
         [Fact]
         public void TestMethod1()
         {
+            
         }
     }
 }

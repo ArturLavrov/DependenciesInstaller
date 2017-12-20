@@ -2,7 +2,7 @@
 
 namespace DependenciesInstaller.Entities
 {
-    public class SingletoneEntity : RegisteredEntity
+    internal class SingletoneEntity : RegisteredEntity
     {
         public override void SetLifeTime(IServiceCollection service)
         {
