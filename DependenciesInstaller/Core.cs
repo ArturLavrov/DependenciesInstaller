@@ -26,20 +26,26 @@ namespace DependenciesInstaller
         internal static Type[] GetAssemblyTypes(string path)
         {
             Assembly assembly = Assembly.LoadFrom(path);
-            var typesInAssembly = assembly.GetTypes().Where(t => t.IsClass).Where(t => !t.IsAbstract).ToArray();
+            var typesInAssembly = assembly.GetTypes().Where(t => t.IsClass && !t.IsAbstract).ToArray();
             return typesInAssembly;
         }
 
         internal static IEnumerable<RegisteredEntity> GetRegisteredEntity(Type[] types)
         {
-            var filteredTypes = types.Where(t => t.GetInterfaces().Any())
-                                 .Select(t => t.GetInterfaces().Where(i => i.Name == "I" + i.Name).FirstOrDefault())
-                                 .Where(t => t != null);
-                                 
-            foreach (var type in filteredTypes)
+            var loopstarts = types.Where(type => type.GetInterfaces().Any())
+                                  .Select(type => new
+                                  {
+                                      inter = type.GetInterfaces()
+                                                  .Where(i => i.Name == "I" + type.Name).FirstOrDefault(),
+                                      clas = type
+                                  })
+                                 .Where(type => type.inter != null);
+                                  
+                                  
+            foreach (var typep in loopstarts)
             {
-                var typeLifeTimeattribute = type.GetEntityLifeTimeAttribute();
-                yield return GetLifeTimeEntity(type.GetInterfaces().First(), type, typeLifeTimeattribute);
+               var typeLifeTimeattribute = typep.clas.GetEntityLifeTimeAttribute();
+               yield return GetLifeTimeEntity(typep.inter, typep.clas, typeLifeTimeattribute);
             }
         }
 

@@ -49,7 +49,7 @@ namespace DependenciesInstaller.Tests
         {
             var repositoryClass = typeof(RepositoryArticle);
             var iRepositoryArticle = typeof(IRepositoryArticle);
-            Type[] arrayTypes = {repositoryClass,iRepositoryArticle};
+            Type[] arrayTypes = {repositoryClass};
             ScopedEntity expectedObj = new ScopedEntity()
             {
                 Class = repositoryClass,
