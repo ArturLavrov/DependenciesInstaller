@@ -6,9 +6,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 
-[assembly: InternalsVisibleTo("DependenciesInstaller.Tests")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("DependenciesInstaller.Tests")]
 namespace DependenciesInstaller
 {
     internal static class Core

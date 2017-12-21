@@ -1,13 +1,14 @@
-﻿using Xunit;
+using System;
+using Xunit;
 
 namespace DependenciesInstaller.Tests
 {
-    public class InstallerTests
+    public class UnitTest1
     {
         [Fact]
-        public void TestMethod1()
+        public void Test1()
         {
-            
+
         }
     }
 }
