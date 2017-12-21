@@ -29,8 +29,21 @@ namespace DependenciesInstaller.Tests
 
             //Assert
             Assert.True(expectedEntity.Class == resultObj.Class);
+            Assert.True(expectedEntity.Interface == resultObj.Interface);
+            Assert.True(expectedEntity.LifeTime == resultObj.LifeTime);
         }
-
+        [Fact]
+        public void GetAssemblyTypes_PassAssemblyPathAsString_ReturnFilteredTypes()
+        {
+            string path = AppDomain.CurrentDomain.BaseDirectory + @"\DependenciesInstaller.Tests.dll";
+            Type[] typesInCurrentAssembly = Core.GetAssemblyTypes(path);
+            foreach(var type in typesInCurrentAssembly)
+            {
+                Assert.False(type.IsAbstract);
+                Assert.False(type.IsInterface);
+                Assert.True(type.IsClass);
+            }
+        }
         public void Dispose()
         {
 

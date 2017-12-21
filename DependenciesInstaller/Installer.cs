@@ -5,7 +5,7 @@ namespace DependenciesInstaller
 {
     public static class Installer
     {
-        public static readonly Guid AttributeTypeId = new Guid("C3730612-B077-4B0D-A7DD-A478D6DEE990");
+        
 
         public static void RunDependenciesInstaller(this IServiceCollection serviceCollection)
         {

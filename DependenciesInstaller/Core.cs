@@ -6,12 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 
-[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("DependenciesInstaller.Tests")]
+[assembly: InternalsVisibleTo("DependenciesInstaller.Tests")]
 namespace DependenciesInstaller
 {
     internal static class Core
     {
+        internal static readonly Guid AttributeTypeId = new Guid("C3730612-B077-4B0D-A7DD-A478D6DEE990");
+
         internal static string[] GetAssembliesPath()
         {
             var loadedAssemblies = AppDomain.CurrentDomain.GetAssemblies().ToList();
@@ -58,7 +61,7 @@ namespace DependenciesInstaller
             return registeredEntity;
         }
 
-       internal static void RegisterDependencies(IServiceCollection service, RegisteredEntity registeredEntity)
+        internal static void RegisterDependencies(IServiceCollection service, RegisteredEntity registeredEntity)
         {
             registeredEntity.SetLifeTime(service);
         }
