@@ -1,6 +1,4 @@
-﻿using DependenciesInstaller.EntityLifeTimeAttributes;
-
-namespace DependenciesInstaller.Tests.TestsData
+﻿namespace DependenciesInstaller.Tests.TestsData
 {
     internal class RepositoryArticle : IRepositoryArticle
     {
