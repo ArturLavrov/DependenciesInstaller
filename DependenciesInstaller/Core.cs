@@ -32,20 +32,19 @@ namespace DependenciesInstaller
 
         internal static IEnumerable<RegisteredEntity> GetRegisteredEntity(Type[] types)
         {
-            var loopstarts = types.Where(type => type.GetInterfaces().Any())
+            var filteredTypes = types.Where(type => type.GetInterfaces().Any())
                                   .Select(type => new
                                   {
-                                      inter = type.GetInterfaces()
+                                      entityInterface = type.GetInterfaces()
                                                   .Where(i => i.Name == "I" + type.Name).FirstOrDefault(),
-                                      clas = type
+                                      entityClass = type
                                   })
-                                 .Where(type => type.inter != null);
-                                  
-                                  
-            foreach (var typep in loopstarts)
+                                 .Where(type => type.entityInterface != null);
+            
+            foreach (var type in filteredTypes)
             {
-               var typeLifeTimeattribute = typep.clas.GetEntityLifeTimeAttribute();
-               yield return GetLifeTimeEntity(typep.inter, typep.clas, typeLifeTimeattribute);
+               var typeLifeTimeattribute = type.entityInterface.GetEntityLifeTimeAttribute();
+               yield return GetLifeTimeEntity(type.entityInterface, type.entityClass, typeLifeTimeattribute);
             }
         }
 
