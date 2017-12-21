@@ -5,8 +5,6 @@ namespace DependenciesInstaller
 {
     public static class Installer
     {
-        
-
         public static void RunDependenciesInstaller(this IServiceCollection serviceCollection)
         {
             var assembliesPaths = Core.GetAssembliesPath();
