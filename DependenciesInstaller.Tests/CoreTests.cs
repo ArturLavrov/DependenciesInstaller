@@ -64,6 +64,8 @@ namespace DependenciesInstaller.Tests
                 Assert.True(expectedObj.Interface == obj.Interface);
                 Assert.True(expectedObj.LifeTime.ToString() == obj.LifeTime.ToString());
             }
+
+            
         }
         public void Dispose()
         {

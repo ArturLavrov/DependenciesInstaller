@@ -43,7 +43,7 @@ namespace DependenciesInstaller
             
             foreach (var type in filteredTypes)
             {
-               var typeLifeTimeattribute = type.entityInterface.GetEntityLifeTimeAttribute();
+               var typeLifeTimeattribute = type.entityClass.GetEntityLifeTimeAttribute();
                yield return GetLifeTimeEntity(type.entityInterface, type.entityClass, typeLifeTimeattribute);
             }
         }
