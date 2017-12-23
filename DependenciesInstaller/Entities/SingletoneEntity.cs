@@ -1,11 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DependenciesInstaller.Entities
 {
-    public class SingletoneEntity : RegisteredEntity
+    internal class SingletoneEntity : RegisteredEntity
     {
         public override void SetLifeTime(IServiceCollection service)
         {

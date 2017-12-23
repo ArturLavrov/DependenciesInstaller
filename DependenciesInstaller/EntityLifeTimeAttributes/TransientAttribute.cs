@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DependenciesInstaller.EntityLifeTimeAttributes
 {
@@ -9,7 +7,7 @@ namespace DependenciesInstaller.EntityLifeTimeAttributes
     {
         public override object TypeId
         {
-            get { return Installer.AttributeTypeId; }
+            get { return Core.AttributeTypeId; }
         }
 
         public override string ToString()
