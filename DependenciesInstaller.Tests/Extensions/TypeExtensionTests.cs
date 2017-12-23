@@ -11,7 +11,7 @@ namespace DependenciesInstaller.Tests.Extensions
         {
             var typeUnderTest = typeof(RepositoryArticle);
             var resultObj = typeUnderTest.GetEntityLifeTimeAttribute();
-            Assert.True(resultObj.ToString() == "Scoped");
+            Assert.True(resultObj.ToString() == "Transient");
         }
     }
 }

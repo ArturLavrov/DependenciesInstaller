@@ -36,7 +36,8 @@ namespace DependenciesInstaller.Tests
         public void GetAssemblyTypes_PassAssemblyPathAsString_ReturnFilteredTypes()
         {
             string path = AppDomain.CurrentDomain.BaseDirectory + @"\DependenciesInstaller.Tests.dll";
-            Type[] typesInCurrentAssembly = Core.GetAssemblyTypes(path);
+            var typesInCurrentAssembly = Core.GetAssemblyTypes(path);
+            Assert.NotNull(typesInCurrentAssembly);
             foreach(var type in typesInCurrentAssembly)
             {
                 Assert.False(type.IsAbstract);
@@ -54,12 +55,14 @@ namespace DependenciesInstaller.Tests
             {
                 Class = repositoryClass,
                 Interface = iRepositoryArticle,
-                LifeTime = new ScopedAttribute(),
+                LifeTime = new TransientAttribute(),
             };
 
             var resultEnumeration = Core.GetRegisteredEntity(arrayTypes);
+  
             foreach(var obj in resultEnumeration)
             {
+                Assert.NotNull(resultEnumeration);
                 Assert.True(expectedObj.Class == obj.Class);
                 Assert.True(expectedObj.Interface == obj.Interface);
                 Assert.True(expectedObj.LifeTime.ToString() == obj.LifeTime.ToString());

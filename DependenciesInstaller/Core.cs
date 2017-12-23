@@ -23,14 +23,14 @@ namespace DependenciesInstaller
             return referencedPaths;
         }
 
-        internal static Type[] GetAssemblyTypes(string path)
+        internal static List<Type> GetAssemblyTypes(string path)
         {
             Assembly assembly = Assembly.LoadFrom(path);
-            var typesInAssembly = assembly.GetTypes().Where(t => t.IsClass && !t.IsAbstract).ToArray();
+            var typesInAssembly = assembly.GetTypes().Where(t => t.IsClass && !t.IsAbstract).ToList();
             return typesInAssembly;
         }
 
-        internal static IEnumerable<RegisteredEntity> GetRegisteredEntity(Type[] types)
+        internal static IEnumerable<RegisteredEntity> GetRegisteredEntity(IEnumerable<Type> types)
         {
             var filteredTypes = types.Where(type => type.GetInterfaces().Any())
                                   .Select(type => new
