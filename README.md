@@ -1,4 +1,5 @@
-# DependenciesInstaller
+# DependenciesInstaller             [![Build status](https://ci.appveyor.com/api/projects/status/10v1yxj93ey0j37x?svg=true)](https://ci.appveyor.com/project/ArturLavrov/dependenciesinstaller)
+
 Lightweight, fast and convenient dependencies installer for ASP.NET Core  
 
 ## Getting Started
