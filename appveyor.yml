@@ -53,7 +53,9 @@ build_script:
 
 # to run tests again only selected assemblies and/or categories
 test:
-  # only categories to test
+  # only assemblies to test
+  assemblies:
+    - '**\*.SoftGene.DependencyInstaller.Tests.dll'
+
   categories:
     - Unit
-    
