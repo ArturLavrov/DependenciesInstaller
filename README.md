@@ -1,4 +1,9 @@
-# DependenciesInstaller             [![Build status](https://ci.appveyor.com/api/projects/status/10v1yxj93ey0j37x?svg=true)](https://ci.appveyor.com/project/ArturLavrov/dependenciesinstaller)
+
+# DependenciesInstaller             
+
+[![Build status](https://ci.appveyor.com/api/projects/status/10v1yxj93ey0j37x?svg=true)](https://ci.appveyor.com/project/ArturLavrov/dependenciesinstaller)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 
 Lightweight, fast and convenient dependencies installer for ASP.NET Core  
 
