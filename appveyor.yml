@@ -27,7 +27,7 @@ configuration: Release
 
 build:
   parallel: true                  # enable MSBuild parallel builds
-  project: SoftGene.DependencyInstaller.sln      # path to Visual Studio solution or project
+  project: /DependenciesInstaller/src/SoftGene.DependencyInstaller.sln      # path to Visual Studio solution or project
 
   # MSBuild verbosity level
   verbosity: minimal
