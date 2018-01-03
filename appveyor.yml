@@ -37,7 +37,7 @@ build:
 
 # scripts to run before build
 before_build:
-  - nuget restore \src\SoftGene.DependencyInstaller.sln 
+  - nuget restore \DependenciesInstaller\src\SoftGene.DependencyInstaller.sln
 
 before_package:
 
