@@ -55,7 +55,7 @@ build_script:
 test:
   # only assemblies to test
   assemblies:
-    - '**\*.SoftGene.DependencyInstaller.Tests.dll'
+    - src\SoftGene.DependencyInstaller.Tests\bin\Debug\netcoreapp2.0\SoftGene.DependencyInstaller.Tests.dll
 
   categories:
     - Unit
