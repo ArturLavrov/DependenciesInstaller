@@ -18,6 +18,8 @@ branches:
 # Build worker image (VM template)
 image: Visual Studio 2015
 
+# clone directory
+clone_folder: c:\projects\DependenciesInstaller
 #---------------------------------#
 #       build configuration       #
 #---------------------------------#
@@ -27,7 +29,7 @@ configuration: Release
 
 build:
   parallel: true                  # enable MSBuild parallel builds
-  project: /DependenciesInstaller/src/SoftGene.DependencyInstaller.sln      # path to Visual Studio solution or project
+  project: DependenciesInstaller\src\SoftGene.DependencyInstaller.sln      # path to Visual Studio solution or project
 
   # MSBuild verbosity level
   verbosity: minimal
