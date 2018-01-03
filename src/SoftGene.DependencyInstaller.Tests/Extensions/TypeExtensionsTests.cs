@@ -8,14 +8,14 @@ namespace DependenciesInstaller.Tests.Extensions
 {
     public class TypeExtensionTests
     {
-        [Fact]
+        [Fact, Trait("Category", "Unit")]
         public void GetEntityLifeTimeAttribute_PassType_ReturnAttribute()
         {
             var typeUnderTest = typeof(RepositoryArticle);
             var resultObj = typeUnderTest.GetEntityLifeTimeAttribute();
             Assert.True(resultObj.ToString() == "Transient");
         }
-        [Fact]
+        [Fact, Trait("Category", "Unit")]
         public void GetEntityLifeTimeAttribute_TypeWithSeveralLifeTimeAttributes_ThrowException()
         {
             var typeUnderTest = typeof(NotificationService);

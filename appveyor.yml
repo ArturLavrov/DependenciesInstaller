@@ -53,4 +53,7 @@ build_script:
 
 # to run tests again only selected assemblies and/or categories
 test:
-  assemblies:
+  # only categories to test
+  categories:
+    - Unit
+    
