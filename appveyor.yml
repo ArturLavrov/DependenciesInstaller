@@ -1,0 +1,59 @@
+#---------------------------------#
+#      general configuration      #
+#---------------------------------#
+
+# version format
+version: 0.9.{build}
+
+# branches to build
+branches:
+  only:
+    - master
+    - stable
+
+
+#---------------------------------#
+#    environment configuration    #
+#---------------------------------#
+# Build worker image (VM template)
+image: Visual Studio 2017
+
+# clone directory
+clone_folder: c:\projects\DependenciesInstaller
+#---------------------------------#
+#       build configuration       #
+#---------------------------------#
+platform: Any CPU
+
+configuration: Release
+
+build:
+  parallel: true                  # enable MSBuild parallel builds
+  project: src\SoftGene.DependencyInstaller.sln      # path to Visual Studio solution or project
+
+  # MSBuild verbosity level
+  verbosity: minimal
+
+
+# scripts to run before build
+before_build:
+  - nuget restore src\SoftGene.DependencyInstaller.sln 
+
+before_package:
+
+
+after_build:
+
+
+build_script:
+
+#---------------------------------#
+#       tests configuration       #
+#---------------------------------#
+
+# to run tests again only selected assemblies and/or categories
+test:
+  # only categories to test
+  categories:
+    - Unit
+    
