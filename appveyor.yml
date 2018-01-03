@@ -29,7 +29,7 @@ configuration: Release
 
 build:
   parallel: true                  # enable MSBuild parallel builds
-  project: src\SoftGene.DependencyInstaller.sln      # path to Visual Studio solution or project
+  project: SoftGene.DependencyInstaller.sln      # path to Visual Studio solution or project
 
   # MSBuild verbosity level
   verbosity: minimal
@@ -37,7 +37,7 @@ build:
 
 # scripts to run before build
 before_build:
-  - nuget restore
+  - nuget restore src\SoftGene.DependencyInstaller.sln 
 
 before_package:
 
