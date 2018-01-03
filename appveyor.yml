@@ -47,3 +47,10 @@ after_build:
 
 build_script:
 
+#---------------------------------#
+#       tests configuration       #
+#---------------------------------#
+
+# to run tests again only selected assemblies and/or categories
+test:
+  assemblies:
