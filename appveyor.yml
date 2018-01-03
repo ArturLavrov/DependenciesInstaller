@@ -47,15 +47,3 @@ after_build:
 
 build_script:
 
-#---------------------------------#
-#       tests configuration       #
-#---------------------------------#
-
-# to run tests again only selected assemblies and/or categories
-test:
-  # only assemblies to test
-  assemblies:
-    - src\SoftGene.DependencyInstaller.Tests\bin\Debug\netcoreapp2.0\SoftGene.DependencyInstaller.Tests.dll
-
-  categories:
-    - Unit
