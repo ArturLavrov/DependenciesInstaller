@@ -47,3 +47,4 @@ after_build:
 
 build_script:
 
+test: off
