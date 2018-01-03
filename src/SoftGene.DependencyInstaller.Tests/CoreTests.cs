@@ -12,7 +12,7 @@ namespace SoftGene.DependencyInstaller.Tests
         {
 
         }
-        [Fact]
+        [Fact,  Trait("Category", "Unit")]
         public void GetLifeTimeEntity_PassScopedEntityParams_ReturnScopedEntity()
         {
             var registeredEntityInterface = typeof(IRepositoryArticle);
@@ -33,7 +33,7 @@ namespace SoftGene.DependencyInstaller.Tests
             Assert.True(expectedEntity.Interface == resultObj.Interface);
             Assert.True(expectedEntity.LifeTime.ToString() == resultObj.LifeTime.ToString());
         }
-        [Fact]
+        [Fact, Trait("Category", "Unit")]
         public void GetAssemblyTypes_PassAssemblyPathAsString_ReturnFilteredTypes()
         {
             string path = AppDomain.CurrentDomain.BaseDirectory + @"\SoftGene.DependencyInstaller.Tests.dll";
@@ -46,7 +46,7 @@ namespace SoftGene.DependencyInstaller.Tests
                 Assert.True(type.IsClass);
             }
         }
-        [Fact]
+        [Fact, Trait("Category", "Unit")]
         public void GetRegisteredEntity_PassTypesArray_ReturnIEnumerableOfRegisteredEntities()
         {
             var repositoryClass = typeof(RepositoryArticle);
