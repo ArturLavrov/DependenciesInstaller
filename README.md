@@ -7,12 +7,73 @@
 
 Lightweight, fast and convenient dependencies installer for ASP.NET Core  
 
+Replace huge piles of similar code for dependencies registration with one single line.
+
+## Before
+```C#
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddMvc(
+        config => {
+            config.Filters.Add(typeof(ExceptionFilter));
+        }
+    );
+
+    services.AddDbContext<DataContext>(
+        options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")), ServiceLifetime.Scoped);
+
+    services.AddScoped<IDataContext, DataContext>();
+
+    services.AddScoped<IRepositoryLanguage, RepositoryLanguage>();
+    services.AddScoped<IRepositoryTransaction, RepositoryTransaction>();
+    services.AddScoped<IRepositoryTransactionCategory, RepositoryTransactionCategory>();
+    services.AddScoped<IRepositoryTransactionCategoryLcz, RepositoryTransactionCategoryLcz>();
+    services.AddScoped<IRepositoryUserTransaction, RepositoryUserTransaction>();
+    ...
+
+    services.AddScoped<IDataAccessServiceTransaction, DataAccessServiceTransaction>();
+    services.AddScoped<IDataAccessServiceTransactionCategory, DataAccessServiceTransactionCategory>();
+    ...
+}
+
+```
+## After
+```C#
+public void ConfigureServices(IServiceCollection services)
+{
+     services.AddMvc(
+        config => {
+            config.Filters.Add(typeof(ExceptionFilter));
+        }
+    );
+
+    services.AddDbContext<DataContext>(
+        options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")), ServiceLifetime.Scoped);
+
+
+    services.RunDependencyInstaller();
+}
+```
+
+
 ## Getting Started
 
-1)Install project from Nuget:
+1) Install project from Nuget:
 ```
 Install-Package DependencesInstaller 
 ```
+2) Inside ConfigureServices method call extension method **RunDependencyInstaller**
+```
+public void ConfigureServices(IServiceCollection services)
+{
+    ...
+    
+    services.RunDependencyInstaller();
+    
+    ...
+}
+```
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
