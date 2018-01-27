@@ -49,7 +49,7 @@ build_script:
 
 test_script:
   - cmd: cd src\SoftGene.DependencyInstaller.Tests
-  - cmd: dotnet xunit
+  - cmd: dotnet test
 on_finish :
   # any cleanup in here
 deploy: off
