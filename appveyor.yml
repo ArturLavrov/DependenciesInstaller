@@ -47,4 +47,12 @@ after_build:
 
 build_script:
 
-test: off
+test_script:
+  # restore packages for our unit tests
+  - cmd: dotnet restore src\SoftGene.DependencyInstaller.Test\SoftGene.DependencyInstaller.Tests.csproj --verbosity m
+  # run the unit tests (requires changing into the test directory)
+  - cmd: cd src\SoftGene.DependencyInstaller.Tests
+  - cmd: dotnet xunit
+on_finish :
+  # any cleanup in here
+deploy: off
