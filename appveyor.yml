@@ -48,7 +48,7 @@ after_build:
 build_script:
 
 test_script:
-  - cmd: cd DependenciesInstaller\src\SoftGene.DependencyInstaller.Tests
+  - cmd: cd src\SoftGene.DependencyInstaller.Tests
   - cmd: dotnet xunit
 on_finish :
   # any cleanup in here
