@@ -34,6 +34,9 @@ build:
   # MSBuild verbosity level
   verbosity: minimal
 
+environment:
+    COVERALLS_REPO_TOKEN:  
+       secure: e3Gb5PW4zsAd4gKsn6oy6qpGnp0omvhP4W48ZPXgi2iKOPgJJVGJ+eOq8Mce13Em
 
 # scripts to run before build
 before_build:
