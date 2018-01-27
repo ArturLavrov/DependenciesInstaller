@@ -59,3 +59,13 @@ deploy:
       secure: /CMWwt2uWXqNXIRxORsl6G8r6Pimnhw0kuZPN5dF6qdYzuXKnquJHqnOsgN73Xso
     skip_symbols: false
     artifact: SoftGene.DependenciesInstaller.nupkg
+
+notifications:
+  # Email
+  - provider: Email
+    to:
+      - arturstylus@gmail.com
+      - nktlitvinenko@gmail.com
+    subject: 'Build {{status}}'                  # optional
+    message: "{{message}}, {{commitId}}, ..."    # optional
+    on_build_status_changed: true
