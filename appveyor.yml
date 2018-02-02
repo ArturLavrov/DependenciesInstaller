@@ -58,7 +58,7 @@ test_script:
 on_finish :
   # any cleanup in here
 
-deploy:
+deploy_script:
   - cmd: cd src\SoftGene.DependencyInstaller
   - cmd: dotnet pack
   - cmd: dotnet nuget push SoftGene.DependencyInstaller.0.9.{build}.nupkg NUGET_API_KEY -s https://api.nuget.org/v3/index.json
