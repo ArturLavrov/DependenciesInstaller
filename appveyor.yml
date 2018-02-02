@@ -37,6 +37,8 @@ build:
 environment:
     COVERALLS_REPO_TOKEN:  
        secure: e3Gb5PW4zsAd4gKsn6oy6qpGnp0omvhP4W48ZPXgi2iKOPgJJVGJ+eOq8Mce13Em
+    NUGET_API_KEY:
+      secure: UXCaeXvAgATXahpggISzAPqRnjeqMGLTHVKbjEHtko9VM2r2FzFEkUlbfhDkBNyW
 
 # scripts to run before build
 before_build:
@@ -58,10 +60,9 @@ on_finish :
 
 deploy:
   - provider: NuGet 
-    api_key:
-      secure: /CMWwt2uWXqNXIRxORsl6G8r6Pimnhw0kuZPN5dF6qdYzuXKnquJHqnOsgN73Xso
-    skip_symbols: false
-    artifact: SoftGene.DependenciesInstaller.nupkg
+  -cmd: cd src\SoftGene.DependencyInstaller
+  -cmd: dotnet pack
+  -cmd: dotnet nuget push SoftGene.DependencyInstaller.0.9.{build}.nupkg NUGET_API_KEY -s https://api.nuget.org/v3/index.json
 
 notifications:
   # Email
