@@ -23,6 +23,7 @@ clone_folder: c:\projects\DependenciesInstaller
 #---------------------------------#
 #       build configuration       #
 #---------------------------------#
+
 platform: Any CPU
  
 configuration: Release
@@ -38,7 +39,7 @@ environment:
     COVERALLS_REPO_TOKEN:  
        secure: e3Gb5PW4zsAd4gKsn6oy6qpGnp0omvhP4W48ZPXgi2iKOPgJJVGJ+eOq8Mce13Em
     NUGET_API_KEY:
-      secure: UXCaeXvAgATXahpggISzAPqRnjeqMGLTHVKbjEHtko9VM2r2FzFEkUlbfhDkBNyW
+       secure: UXCaeXvAgATXahpggISzAPqRnjeqMGLTHVKbjEHtko9VM2r2FzFEkUlbfhDkBNyW
 
 # scripts to run before build
 before_build:
@@ -59,6 +60,7 @@ on_finish :
   # any cleanup in here
 
 deploy_script:
+  - cmd: cd ..
   - cmd: cd src\SoftGene.DependencyInstaller
   - cmd: dotnet pack
   - cmd: dotnet nuget push SoftGene.DependencyInstaller.0.9.{build}.nupkg NUGET_API_KEY -s https://api.nuget.org/v3/index.json
