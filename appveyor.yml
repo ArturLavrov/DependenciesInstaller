@@ -24,7 +24,7 @@ clone_folder: c:\projects\DependenciesInstaller
 #       build configuration       #
 #---------------------------------#
 platform: Any CPU
-
+ 
 configuration: Release
 
 build:
@@ -60,9 +60,9 @@ on_finish :
 
 deploy:
   - provider: NuGet 
-  -cmd: cd src\SoftGene.DependencyInstaller
-  -cmd: dotnet pack
-  -cmd: dotnet nuget push SoftGene.DependencyInstaller.0.9.{build}.nupkg NUGET_API_KEY -s https://api.nuget.org/v3/index.json
+  - cmd: cd src\SoftGene.DependencyInstaller
+  - cmd: dotnet pack
+  - cmd: dotnet nuget push SoftGene.DependencyInstaller.0.9.{build}.nupkg NUGET_API_KEY -s https://api.nuget.org/v3/index.json
 
 notifications:
   # Email
