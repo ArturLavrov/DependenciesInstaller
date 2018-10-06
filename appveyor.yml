@@ -39,7 +39,7 @@ environment:
     COVERALLS_REPO_TOKEN:  
        secure: e3Gb5PW4zsAd4gKsn6oy6qpGnp0omvhP4W48ZPXgi2iKOPgJJVGJ+eOq8Mce13Em
     NUGET_API_KEY:
-       secure: UXCaeXvAgATXahpggISzAPqRnjeqMGLTHVKbjEHtko9VM2r2FzFEkUlbfhDkBNyW
+       secure: qYvxO/DmomKiG2erjL3wl3e9hYh6JsVkdGRTsWoWWX3Y0VZKiXqFiuQDMJu528ZL
 
 # scripts to run before build
 before_build:
@@ -60,11 +60,13 @@ on_finish :
   # any cleanup in here
 
 deploy_script:
-  - cmd: cd ..
-  - cmd: cd SoftGene.DependencyInstaller
-  - cmd: dotnet pack
-  - cmd: dotnet nuget setapikey NUGET_API_KEY -source https://api.nuget.org/v3/index.json
-  - cmd: dotnet nuget push SoftGene.DependencyInstaller.0.9.{build}.nupkg -source https://api.nuget.org/v3/index.json
+  provider: NuGet
+  server:                  # remove to push to NuGet.org
+  api_key:
+    secure: NUGET_API_KEY
+  skip_symbols: false
+  symbol_server:           # remove to push symbols to SymbolSource.org
+  artifact: /.*\.nupkg/
 
 notifications:
   # Email
