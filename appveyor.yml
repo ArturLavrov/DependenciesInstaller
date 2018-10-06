@@ -38,7 +38,7 @@ build:
 environment:
     COVERALLS_REPO_TOKEN:  
        secure: e3Gb5PW4zsAd4gKsn6oy6qpGnp0omvhP4W48ZPXgi2iKOPgJJVGJ+eOq8Mce13Em
-    NUGET_API_KEY:
+    api_key:
        secure: qYvxO/DmomKiG2erjL3wl3e9hYh6JsVkdGRTsWoWWX3Y0VZKiXqFiuQDMJu528ZL
 
 # scripts to run before build
