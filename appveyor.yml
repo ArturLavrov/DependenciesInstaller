@@ -59,10 +59,7 @@ test_script:
 on_finish :
   # any cleanup in here
 
-deploy_script:
-  cmd: cd ..
-  cmd: cd SoftGene.DependencyInstaller
-  cmd: dotnet pack
+deploy:
   provider: NuGet
   server:                  # remove to push to NuGet.org
   api_key:
