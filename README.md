@@ -87,6 +87,9 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 * **Artur Lavrov** 
 * **Nikita Litvinenko**
 
+### Inspired by 
+[IoC-manager-net](https://github.com/Mart-Bogdan/IoC-manager-net) (by Bogdan Mart)
+
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
