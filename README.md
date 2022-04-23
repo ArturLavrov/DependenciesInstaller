@@ -1,5 +1,5 @@
 
-# DependenciesInstaller             
+# DependenciesInstaller             <img width="173" align="right" alt="image" src="https://user-images.githubusercontent.com/10619880/164889982-23cc7d84-776d-4431-a674-535d5d235706.png">
 
 [![Build status](https://ci.appveyor.com/api/projects/status/10v1yxj93ey0j37x?svg=true)](https://ci.appveyor.com/project/ArturLavrov/dependenciesinstaller)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
